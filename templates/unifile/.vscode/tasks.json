@@ -1,0 +1,85 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "GCC Build C",
+      "command": "/usr/bin/gcc",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-std=c11",
+        "-g",
+        "${file}",
+        "-lm",
+        "-o",
+        "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "编译器: /usr/bin/gcc"
+    },
+    {
+      "type": "cppbuild",
+      "label": "GCC Build Cpp",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-std=c++17",
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "编译器: /usr/bin/g++"
+    },
+    {
+      "type": "cppbuild",
+      "label": "Clang Build Cpp",
+      "command": "/usr/bin/clang++",
+      "args": [
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-std=c++17",
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "编译器: /usr/bin/clang++"
+    },
+    {
+      "type": "cppbuild",
+      "label": "Clang Build C",
+      "command": "/usr/bin/clang",
+      "args": [
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-std=c11",
+        "-g",
+        "${file}",
+        "-lm",
+        "-o",
+        "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "编译器: /usr/bin/clang"
+    }
+  ]
+}
