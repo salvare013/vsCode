@@ -16,20 +16,22 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 # 手动添加生成程序
 
-# add_executable (${PROJECT_NAME} ./main.c ./str.c)
+# add_executable (${PROJECT_NAME} ./main.c )
 
-# target_link_libraries(${PROJECT_NAME} lib)
+# target_link_libraries(${PROJECT_NAME} m)
 
 #############################################################
 
 # 链接源文件生成程序
-# add_subdirectory(./src)
+add_subdirectory(./src)
 
-# Linux下使用数学函数需要手动链接数学库
-# target_link_libraries(${PROJECT_NAME} m)
-
-# 链接库文件生成程序
+# # 链接库文件生成程序
 # add_subdirectory(./lib)
+
+# # # Linux下使用数学函数需要手动链接数学库
+
+target_link_libraries(${PROJECT_NAME} m)
+
 
 #############################################################################
 
@@ -46,15 +48,15 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 ##############################################################################
 
-# # # 获取源文件列表
+# # # # 获取源文件列表
 # aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_LIST)
 
-# # # 用源文件列表生成静态库
+# # # # 用源文件列表生成静态库
 
 # add_library(PROJECT_STATIC STATIC ${SRC_LIST})
 # set_target_properties(PROJECT_STATIC PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 
-# # 用源文件列表生成共享库
+# # # 用源文件列表生成共享库
 
 # add_library(PROJECT_SHARED SHARED ${SRC_LIST})
 # set_target_properties(PROJECT_SHARED PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
