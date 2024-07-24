@@ -1,3 +1,7 @@
+#############################################################
+
+# 基本配置
+
 # 设置cmake版本要求
 cmake_minimum_required(VERSION 3.22...3.30 FATAL_ERROR)
 # 设置项目名
@@ -30,7 +34,7 @@ add_subdirectory(./src)
 
 # # # Linux下使用数学函数需要手动链接数学库
 
-target_link_libraries(${PROJECT_NAME} m)
+# target_link_libraries(${PROJECT_NAME} m)
 
 
 #############################################################################
@@ -62,3 +66,31 @@ target_link_libraries(${PROJECT_NAME} m)
 # set_target_properties(PROJECT_SHARED PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 
 ##############################################################################
+
+# 生成软件包
+
+# 设置cpack生成文件路径
+set(CPACK_PACKAGE_DIRECTORY "${PROJECT_SOURCE_DIR}/packages")
+
+# 指定CPack软件包生成器
+set(CPACK_GENERATOR "TGZ;DEB")
+
+# 设置软件包的名称和版本
+set(PACKAGE_NAME ${PROJECT_NAME})
+set(PACKAGE_VERSION "1.0.0")
+
+# 设置维护者信息(不能少!!!)
+set(CPACK_PACKAGE_CONTACT "xmx <salvare00013@foxmail.com>")
+
+# 添加可执行文件、库文件等需要安装的文件
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+# install(FILES YourLibrary.so DESTINATION lib)
+# install(FILES YourHeaderFile.h DESTINATION include)
+
+# 指定Debian打包时的软件包依赖
+# set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "Depends: ${CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA}, your-dependency-package")
+
+# 生成软件包所需的CPack配置文件(必须放在所有配置的最后!!!!!!!!!)
+include(CPack)
+
+###################################################################################################################
