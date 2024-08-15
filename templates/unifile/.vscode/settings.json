@@ -1,8 +1,0 @@
-{
-  "C_Cpp.intelliSenseEngine": "disabled",
-  "code-runner.executorMap": {
-    "c": "cd $dir && gcc -g -std=c11 $fileName -lm -o ../bin/$fileNameWithoutExt && ../bin/$fileNameWithoutExt",
-    "cpp": "cd $dir && g++ -g -std=c++17 $fileName -o ../bin/$fileNameWithoutExt && ../bin/$fileNameWithoutExt",
-    "python": "python3 -u"
-  }
-}
