@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "GCC Build C",
+      "command": "/usr/bin/gcc",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-std=c11",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "编译器: /usr/bin/gcc"
+    },
+    {
+      "type": "cppbuild",
+      "label": "GCC Build CXX",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-std=c++17",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "编译器: /usr/bin/g++"
+    }
+  ]
+}
